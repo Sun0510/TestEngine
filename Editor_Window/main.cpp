@@ -3,8 +3,13 @@
 
 #include "framework.h"
 #include "Editor_Window.h"
+#include "..\\TestEngine_SOURCE\sunApplication.h"
+
 
 #define MAX_LOADSTRING 100
+
+
+Application app;
 
 // 전역 변수:
 HINSTANCE hInst;                                // 현재 인스턴스입니다.
@@ -42,15 +47,37 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     MSG msg;
 
+    app.test();
+
+
+    // 무한 실행 루프
+    while (true) 
+    {
+        // 메시지가 있음
+        if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE)) 
+        { 
+            if (msg.message == WM_QUIT) 
+            {
+                break;
+            }
+            if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
+            {
+                TranslateMessage(&msg);
+                DispatchMessage(&msg);
+            }
+        }
+
+    }
+
     // 기본 메시지 루프입니다:
-    while (GetMessage(&msg, nullptr, 0, 0))
+    /*while (GetMessage(&msg, nullptr, 0, 0))
     {
         if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
         {
             TranslateMessage(&msg);
             DispatchMessage(&msg);
         }
-    }
+    }*/
 
     return (int) msg.wParam;
 }
@@ -146,6 +173,26 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         {
             PAINTSTRUCT ps;
             HDC hdc = BeginPaint(hWnd, &ps);
+
+            HBRUSH brush = CreateSolidBrush(RGB(255, 0, 255));
+            SelectObject(hdc, brush);
+
+            Rectangle(hdc, 100, 100, 200, 200);
+            DeleteObject(brush);
+
+            HPEN pen = CreatePen(PS_SOLID, 3, RGB(128, 128, 128));
+            SelectObject(hdc, pen);
+
+            Ellipse(hdc, 250, 250, 450, 450);
+            DeleteObject(pen);
+            
+            brush = (HBRUSH) GetStockObject(GRAY_BRUSH);
+            SelectObject(hdc, brush);
+
+            MoveToEx(hdc, 50, 50, NULL);
+            LineTo(hdc, 200, 50);
+           
+
             // TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
             EndPaint(hWnd, &ps);
         }
