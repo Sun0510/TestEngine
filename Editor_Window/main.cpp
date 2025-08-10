@@ -9,7 +9,7 @@
 #define MAX_LOADSTRING 100
 
 
-Application app;
+sun::Application application;
 
 // 전역 변수:
 HINSTANCE hInst;                                // 현재 인스턴스입니다.
@@ -47,8 +47,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     MSG msg;
 
-    app.test();
-
 
     // 무한 실행 루프
     while (true) 
@@ -65,6 +63,10 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                 TranslateMessage(&msg);
                 DispatchMessage(&msg);
             }
+        }
+        else
+        {
+            application.Run();
         }
 
     }
@@ -127,6 +129,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
       CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
 
+   application.Initialize(hWnd);
+
    if (!hWnd)
    {
       return FALSE;
@@ -174,23 +178,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             PAINTSTRUCT ps;
             HDC hdc = BeginPaint(hWnd, &ps);
 
-            HBRUSH brush = CreateSolidBrush(RGB(255, 0, 255));
-            SelectObject(hdc, brush);
-
-            Rectangle(hdc, 100, 100, 200, 200);
-            DeleteObject(brush);
-
-            HPEN pen = CreatePen(PS_SOLID, 3, RGB(128, 128, 128));
-            SelectObject(hdc, pen);
-
-            Ellipse(hdc, 250, 250, 450, 450);
-            DeleteObject(pen);
             
-            brush = (HBRUSH) GetStockObject(GRAY_BRUSH);
-            SelectObject(hdc, brush);
-
-            MoveToEx(hdc, 50, 50, NULL);
-            LineTo(hdc, 200, 50);
            
 
             // TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
