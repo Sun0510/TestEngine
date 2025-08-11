@@ -1,5 +1,6 @@
 #pragma once
 #include "CommonInclude.h"
+#include "sunGameObject.h"
 
 namespace sun {
 	class Application
@@ -8,8 +9,8 @@ namespace sun {
 		HWND mHwnd;
 		HDC mHdc;
 		float mSpeed;
-		float mX;
-		float mY;
+
+		GameObject mPlayer;
 	public:
 		Application();
 		~Application();

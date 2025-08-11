@@ -15,9 +15,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)sunGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)sunApplication.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)sunGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)sunApplication.cpp" />
   </ItemGroup>
 </Project>
