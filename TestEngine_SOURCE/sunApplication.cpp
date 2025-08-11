@@ -20,7 +20,8 @@ namespace sun
 		mHwnd = hwnd;
 		mHdc = GetDC(hwnd);
 
-		mPlayer.SetPosition(0, 0);
+		mPlayer.SetPosition1(0, 0);
+		mPlayer.SetPosition2(0, 0);
 	}
 	void Application::Run()
 	{

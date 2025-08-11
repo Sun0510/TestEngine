@@ -6,8 +6,11 @@ namespace sun
 	class GameObject
 	{
 	private:
-		float mX;
-		float mY;
+		float mX1;
+		float mY1;
+
+		float mX2;
+		float mY2;
 	public:
 		GameObject();
 		~GameObject();
@@ -16,13 +19,21 @@ namespace sun
 		void LateUpdate();
 		void Render(HDC hdc);
 
-		void SetPosition(float x, float y)
+		void SetPosition1(float x, float y)
 		{
-			mX = x;
-			mY = y;
+			mX1 = x;
+			mY1 = y;
 		}
-		float GetPositionX() { return mX; }
-		float GetPositionY() { return mY; }
+
+		void SetPosition2(float x, float y)
+		{
+			mX2 = x;
+			mY2 = y;
+		}
+		float GetPositionX1() { return mX1; }
+		float GetPositionY1() { return mY1; }
+		float GetPositionX2() { return mX2; }
+		float GetPositionY2() { return mY2; }
 
 	};
 }
