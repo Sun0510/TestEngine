@@ -1,4 +1,5 @@
 #include "sunApplication.h"
+#include "Input.h"
 
 namespace sun
 {
@@ -22,6 +23,8 @@ namespace sun
 
 		mPlayer.SetPosition1(0, 0);
 		mPlayer.SetPosition2(0, 0);
+
+		Input::Initialize();
 	}
 	void Application::Run()
 	{
@@ -33,7 +36,7 @@ namespace sun
 	
 	void Application::Update()
 	{
-		mSpeed += 0.01f;
+		Input::Update();
 
 		mPlayer.Update();
 	}

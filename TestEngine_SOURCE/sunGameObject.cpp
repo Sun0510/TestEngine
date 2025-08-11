@@ -1,4 +1,5 @@
 #include "sunGameObject.h"
+#include "Input.h"
 
 namespace sun {
 	GameObject::GameObject()
@@ -13,43 +14,43 @@ namespace sun {
 	void GameObject::Update()
 	{
 		//Player1
-		if (GetAsyncKeyState(VK_LEFT) & 0x8000)
+		if (Input::GetKey(eKeyCode::Left))
 		{
 			mX1 -= 0.01f;
 		}
 
-		if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
+		if (Input::GetKey(eKeyCode::Right))
 		{
 			mX1 += 0.01f;
 		}
 
-		if (GetAsyncKeyState(VK_UP) & 0x8000)
+		if (Input::GetKey(eKeyCode::Up))
 		{
 			mY1 -= 0.01f;// 윈도우 좌표계상 가장 왼쪽위가 (0,0)이기 때문에 마이너스
 		}
 
-		if (GetAsyncKeyState(VK_DOWN) & 0x8000)
+		if (Input::GetKey(eKeyCode::Down))
 		{
 			mY1 += 0.01f;
 		}
 
 		//Player2
-		if (GetAsyncKeyState('A') & 0x8000)
+		if (Input::GetKey(eKeyCode::A))
 		{
 			mX2 -= 0.01f;
 		}
 
-		if (GetAsyncKeyState('D') & 0x8000)
+		if (Input::GetKey(eKeyCode::D))
 		{
 			mX2 += 0.01f;
 		}
 
-		if (GetAsyncKeyState('W') & 0x8000)
+		if (Input::GetKey(eKeyCode::W))
 		{
 			mY2 -= 0.01f;// 윈도우 좌표계상 가장 왼쪽위가 (0,0)이기 때문에 마이너스
 		}
 
-		if (GetAsyncKeyState('S') & 0x8000)
+		if (Input::GetKey(eKeyCode::S))
 		{
 			mY2 += 0.01f;
 		}
