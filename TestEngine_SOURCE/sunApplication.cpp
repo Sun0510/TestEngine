@@ -1,5 +1,6 @@
 #include "sunApplication.h"
-#include "Input.h"
+#include "sunInput.h"
+#include "sunTime.h"
 
 namespace sun
 {
@@ -25,6 +26,7 @@ namespace sun
 		mPlayer.SetPosition2(0, 0);
 
 		Input::Initialize();
+		Time::Initialize();
 	}
 	void Application::Run()
 	{
@@ -37,6 +39,7 @@ namespace sun
 	void Application::Update()
 	{
 		Input::Update();
+		Time::Update();
 
 		mPlayer.Update();
 	}
@@ -46,6 +49,7 @@ namespace sun
 	}
 	void Application::Render()
 	{
+		Time::Render(mHdc);
 		mPlayer.Render(mHdc);
 
 	}

@@ -27,7 +27,7 @@ namespace sun {
 			bool bPressed;
 		};
 
-		static std::vector<Key> mKeys;
+		static std::vector<Key> Keys;
 		eKeyState mState;
 
 	public:
@@ -36,10 +36,14 @@ namespace sun {
 
 		static void CreateKeys();
 		static void UpdateKeys();
+		static void UpdateKey(Key& key);
+		static bool IsKeyDown(eKeyCode code);
+		static void UpdateKeyDown(Key& key);
+		static void UpdateKeyUp(Key& key);		
 
-		static bool GetKeyDown(eKeyCode code) { return mKeys[(UINT)code].state == eKeyState::Down; }
-		static bool GetKeyUp(eKeyCode code) { return mKeys[(UINT)code].state == eKeyState::Up; }
-		static bool GetKey(eKeyCode code) { return mKeys[(UINT)code].state == eKeyState::Pressed; }
+		static bool GetKeyDown(eKeyCode code) { return Keys[(UINT)code].state == eKeyState::Down; }
+		static bool GetKeyUp(eKeyCode code) { return Keys[(UINT)code].state == eKeyState::Up; }
+		static bool GetKey(eKeyCode code) { return Keys[(UINT)code].state == eKeyState::Pressed; }
 
 	
 	};

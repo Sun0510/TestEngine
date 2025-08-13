@@ -1,5 +1,6 @@
 #include "sunGameObject.h"
-#include "Input.h"
+#include "sunInput.h"
+#include "sunTime.h"
 
 namespace sun {
 	GameObject::GameObject()
@@ -13,46 +14,47 @@ namespace sun {
 
 	void GameObject::Update()
 	{
+		const float speed = 100.0f;
 		//Player1
 		if (Input::GetKey(eKeyCode::Left))
 		{
-			mX1 -= 0.01f;
+			mX1 -= speed * Time::DeltaTime();
 		}
 
 		if (Input::GetKey(eKeyCode::Right))
 		{
-			mX1 += 0.01f;
+			mX1 += speed * Time::DeltaTime();
 		}
 
 		if (Input::GetKey(eKeyCode::Up))
 		{
-			mY1 -= 0.01f;// 윈도우 좌표계상 가장 왼쪽위가 (0,0)이기 때문에 마이너스
+			mY1 -= speed * Time::DeltaTime();// 윈도우 좌표계상 가장 왼쪽위가 (0,0)이기 때문에 마이너스
 		}
 
 		if (Input::GetKey(eKeyCode::Down))
 		{
-			mY1 += 0.01f;
+			mY1 += speed * Time::DeltaTime();
 		}
 
 		//Player2
 		if (Input::GetKey(eKeyCode::A))
 		{
-			mX2 -= 0.01f;
+			mX2 -= speed * Time::DeltaTime();
 		}
 
 		if (Input::GetKey(eKeyCode::D))
 		{
-			mX2 += 0.01f;
+			mX2 += speed * Time::DeltaTime();
 		}
 
 		if (Input::GetKey(eKeyCode::W))
 		{
-			mY2 -= 0.01f;// 윈도우 좌표계상 가장 왼쪽위가 (0,0)이기 때문에 마이너스
+			mY2 -= speed * Time::DeltaTime();// 윈도우 좌표계상 가장 왼쪽위가 (0,0)이기 때문에 마이너스
 		}
 
 		if (Input::GetKey(eKeyCode::S))
 		{
-			mY2 += 0.01f;
+			mY2 += speed * Time::DeltaTime();
 		}
 
 	}
