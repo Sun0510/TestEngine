@@ -34,6 +34,9 @@ namespace sun {
 		static void Initialize();
 		static void Update();
 
+		static void CreateKeys();
+		static void UpdateKeys();
+
 		static bool GetKeyDown(eKeyCode code) { return mKeys[(UINT)code].state == eKeyState::Down; }
 		static bool GetKeyUp(eKeyCode code) { return mKeys[(UINT)code].state == eKeyState::Up; }
 		static bool GetKey(eKeyCode code) { return mKeys[(UINT)code].state == eKeyState::Pressed; }

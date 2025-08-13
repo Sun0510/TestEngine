@@ -13,19 +13,28 @@ namespace sun
 
 	void Input::Initialize()
 	{
+		CreateKeys();
+	}
+	void Input::Update()
+	{
+		UpdateKeys();
+	}
+
+	void Input::CreateKeys()
+	{
 		mKeys.resize((UINT)eKeyCode::End);
 
-		for (size_t i = 0; i < (UINT) eKeyCode::End; i++)
+		for (size_t i = 0; i < (UINT)eKeyCode::End; i++)
 		{
 			Key key = {};
 			key.bPressed = false;
 			key.state = eKeyState::None;
-			key.keyCode = (eKeyCode) i;
+			key.keyCode = (eKeyCode)i;
 
 			mKeys.push_back(key);
 		}
 	}
-	void Input::Update()
+	void Input::UpdateKeys()
 	{
 		for (size_t i = 0; i < mKeys.size(); i++)
 		{
@@ -37,7 +46,7 @@ namespace sun
 				else // 이전에는 키가 안 눌려져있었음
 					mKeys[i].state = eKeyState::Down;
 				mKeys[i].bPressed = true;
-				
+
 			}
 			else //키가 안 눌림
 			{
