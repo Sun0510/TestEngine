@@ -5,9 +5,9 @@ namespace sun {
 	class Time
 	{
 	private:
-		static LARGE_INTEGER CpuFrequency;
-		static LARGE_INTEGER PrevFrequency;
-		static LARGE_INTEGER CurrentFrequency;
+		static LARGE_INTEGER CpuFrequency; //Cpu 고유 진동수
+		static LARGE_INTEGER PrevFrequency; //이전 진동수
+		static LARGE_INTEGER CurrentFrequency; //현재 진동수
 		static float DeltaTimeValue; //시간
 	public:
 		static void Initialize();

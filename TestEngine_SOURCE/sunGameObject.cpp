@@ -4,6 +4,10 @@
 
 namespace sun {
 	GameObject::GameObject()
+		: mX1(0),
+		mY1(0),
+		mX2(0),
+		mY2(0)
 	{
 
 	}

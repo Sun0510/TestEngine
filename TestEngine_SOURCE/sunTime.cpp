@@ -8,7 +8,6 @@ namespace sun {
 
 	void Time::Initialize()
 	{
-		//Cpu 고유 진동수
 		QueryPerformanceFrequency(&CpuFrequency);
 
 		// 프로그램이 시작했을 때 진동수
@@ -17,7 +16,7 @@ namespace sun {
 
 	void Time::Update()
 	{
-		// 현재 진동수
+		//현재 진동수
 		QueryPerformanceCounter(&CurrentFrequency);
 
 		float differenceFrequency = static_cast<float>(CurrentFrequency.QuadPart - PrevFrequency.QuadPart);
@@ -29,18 +28,22 @@ namespace sun {
 
 	void Time::Render(HDC hdc)
 	{
-		static float time = 0.0f;
+		static float time = 0.0f; //실행된 시간
+		float fps; //FPS 현재 초당 프레임
 
-		time += DeltaTimeValue;
-		float fps = 1.0f / DeltaTimeValue;
-		wchar_t str[50] = L"";
-		swprintf_s(str, 50, L"Time : %f", fps);
+		time += DeltaTimeValue; 
+		fps = 1.0f / DeltaTimeValue;
 
-		int len = wcsnlen_s(str, 50);
+		wchar_t str1[50] = L"";
+		wchar_t str2[50] = L"";
 
-		
+		swprintf_s(str1, 50, L"Time : %f", time);
+		swprintf_s(str2, 50, L"FPS : %f", fps);
 
-		TextOut(hdc, 0, 0, str, len);
+		int len = wcsnlen_s(str1, 50);
+
+		TextOut(hdc, 0, 0, str1, len);
+		TextOut(hdc, 0, 20, str2, len);
 	}
 }
 
