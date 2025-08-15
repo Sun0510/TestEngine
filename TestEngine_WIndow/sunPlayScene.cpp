@@ -1,5 +1,7 @@
 #include "sunPlayScene.h"
-#include "sunGameObject.h"
+#include "sunTransform.h"
+#include "sunSpriteRenderer.h"
+#include "sunPlayer.h"
 
 namespace sun
 {
@@ -13,12 +15,16 @@ namespace sun
 
 	void PlayScene::Initialize()
 	{
-		GameObject* obj = new GameObject();
-		srand((UINT)&obj); //위치 랜덤 위함
+		Player* p1 = new Player();
 
-		obj->SetPosition(rand() % 1600, rand() % 900);
+		Transform* tr = p1->AddComponent<Transform>();
+		tr->SetPos(100, 470);
+		tr->SetName(L"TR");
 
-		AddGameObject(obj);
+		SpriteRenderer* sr = p1->AddComponent<SpriteRenderer>();
+		sr->SetName(L"SR");
+
+		AddGameObject(p1);
 	}
 
 	void PlayScene::Update()

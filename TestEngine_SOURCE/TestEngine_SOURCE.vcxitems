@@ -15,21 +15,27 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)sunComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)sunEntity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)sunInput.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)sunGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)sunApplication.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)sunScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)sunSceneManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)sunSpriteRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)sunTime.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)sunTransform.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)sunComponent.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)sunEntity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)sunInput.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)sunGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)sunApplication.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)sunScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)sunSceneManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)sunSpriteRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)sunTime.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)sunTransform.cpp" />
   </ItemGroup>
 </Project>

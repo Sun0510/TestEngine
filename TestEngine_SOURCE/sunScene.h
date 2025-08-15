@@ -17,6 +17,7 @@ namespace sun
 		virtual void LateUpdate();
 		virtual void Render(HDC hdc);
 		
+		//현재 Scene에 오브젝트 추가
 		void AddGameObject(GameObject* gameObject);
 	
 	};

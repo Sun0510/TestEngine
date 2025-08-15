@@ -131,9 +131,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="sunLoadScene.h" />
+    <ClInclude Include="sunPlayer.h" />
     <ClInclude Include="sunPlayScene.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="sunPlayer.cpp" />
     <ClCompile Include="sunPlayScene.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

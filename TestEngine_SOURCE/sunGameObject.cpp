@@ -14,45 +14,36 @@ namespace sun {
 	{
 	}
 
+	void GameObject::Initialize()
+	{
+		for (Component* comp : mComponents)
+		{
+			comp->Initialize();
+		}
+	}
+
 	void GameObject::Update()
 	{
-		const float speed = 100.0f;
-		//Player1
-		if (Input::GetKey(eKeyCode::Left))
+		for (Component* comp : mComponents)
 		{
-			mX -= speed * Time::DeltaTime();
-		}
-
-		if (Input::GetKey(eKeyCode::Right))
-		{
-			mX += speed * Time::DeltaTime();
-		}
-
-		if (Input::GetKey(eKeyCode::Up))
-		{
-			mY -= speed * Time::DeltaTime();// 윈도우 좌표계상 가장 왼쪽위가 (0,0)이기 때문에 마이너스
-		}
-
-		if (Input::GetKey(eKeyCode::Down))
-		{
-			mY += speed * Time::DeltaTime();
+			comp->Update();
 		}
 
 	}
 	void GameObject::LateUpdate()
 	{
-
+		for (Component* comp : mComponents)
+		{
+			comp->LateUpdate();
+		}
 	}
 	void GameObject::Render(HDC hdc)
 	{
+		for (Component* comp : mComponents)
+		{
+			comp->Render(hdc);
+		}
 
-		HBRUSH brush = CreateSolidBrush(RGB(0, 0, 255));
-		SelectObject(hdc, brush);
-
-		Rectangle(hdc, mX, mY, 100 + mX, 100 + mY);
-		DeleteObject(brush);
-
-		DeleteObject(brush);
 
 	}
 }
