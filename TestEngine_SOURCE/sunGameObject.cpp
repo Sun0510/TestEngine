@@ -4,10 +4,8 @@
 
 namespace sun {
 	GameObject::GameObject()
-		: mX1(0),
-		mY1(0),
-		mX2(0),
-		mY2(0)
+		: mX(0),
+		mY(0)
 	{
 
 	}
@@ -22,43 +20,22 @@ namespace sun {
 		//Player1
 		if (Input::GetKey(eKeyCode::Left))
 		{
-			mX1 -= speed * Time::DeltaTime();
+			mX -= speed * Time::DeltaTime();
 		}
 
 		if (Input::GetKey(eKeyCode::Right))
 		{
-			mX1 += speed * Time::DeltaTime();
+			mX += speed * Time::DeltaTime();
 		}
 
 		if (Input::GetKey(eKeyCode::Up))
 		{
-			mY1 -= speed * Time::DeltaTime();// 윈도우 좌표계상 가장 왼쪽위가 (0,0)이기 때문에 마이너스
+			mY -= speed * Time::DeltaTime();// 윈도우 좌표계상 가장 왼쪽위가 (0,0)이기 때문에 마이너스
 		}
 
 		if (Input::GetKey(eKeyCode::Down))
 		{
-			mY1 += speed * Time::DeltaTime();
-		}
-
-		//Player2
-		if (Input::GetKey(eKeyCode::A))
-		{
-			mX2 -= speed * Time::DeltaTime();
-		}
-
-		if (Input::GetKey(eKeyCode::D))
-		{
-			mX2 += speed * Time::DeltaTime();
-		}
-
-		if (Input::GetKey(eKeyCode::W))
-		{
-			mY2 -= speed * Time::DeltaTime();// 윈도우 좌표계상 가장 왼쪽위가 (0,0)이기 때문에 마이너스
-		}
-
-		if (Input::GetKey(eKeyCode::S))
-		{
-			mY2 += speed * Time::DeltaTime();
+			mY += speed * Time::DeltaTime();
 		}
 
 	}
@@ -72,12 +49,9 @@ namespace sun {
 		HBRUSH brush = CreateSolidBrush(RGB(0, 0, 255));
 		SelectObject(hdc, brush);
 
-		Rectangle(hdc, 100 + mX2, 100 + mY2, 200 + mX2, 200 + mY2);
+		Rectangle(hdc, mX, mY, 100 + mX, 100 + mY);
 		DeleteObject(brush);
 
-		brush = CreateSolidBrush(RGB(255, 0, 0));
-		SelectObject(hdc, brush);
-		Ellipse(hdc, 300 + mX1, 300 + mY1, 400 + mX1, 400 + mY1);
 		DeleteObject(brush);
 
 	}

@@ -1,6 +1,7 @@
 #include "sunApplication.h"
 #include "sunInput.h"
 #include "sunTime.h"
+#include "sunSceneManager.h"
 
 namespace sun
 {
@@ -25,18 +26,10 @@ namespace sun
 	{
 		adjustWindowRect(hwnd, width, height);
 		createBuffer(width, height);
-
-		for (size_t i = 0; i < 10; i++)
-		{
-			GameObject* gameObj = new GameObject();
-			gameObj->SetPosition1(rand() % 1600, rand() % 900);
-
-			mGameObjects.push_back(gameObj);
-		}
 		
-
 		Input::Initialize();
 		Time::Initialize();
+		SceneManager::Initialize();
 	}
 	void Application::Run()
 	{
@@ -51,10 +44,7 @@ namespace sun
 		Input::Update();
 		Time::Update();
 
-		for (size_t i = 0; i < mGameObjects.size(); i++)
-		{
-			mGameObjects[i]->Update();
-		}
+		SceneManager::Update();
 	}
 	void Application::LateUpdate()
 	{
@@ -65,10 +55,7 @@ namespace sun
 		clearRenderTarget();
 
 		Time::Render(mBackHdc);
-		for (size_t i = 0; i < mGameObjects.size(); i++)
-		{
-			mGameObjects[i]->Render(mBackHdc);
-		}
+		SceneManager::Render(mBackHdc);
 
 		copyRenderTarget(mBackHdc, mHdc);
 	}

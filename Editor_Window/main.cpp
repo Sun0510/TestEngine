@@ -4,7 +4,7 @@
 #include "framework.h"
 #include "Editor_Window.h"
 #include "..\\TestEngine_SOURCE\sunApplication.h"
-
+#include "..\\TestEngine_Window\sunLoadScene.h"
 
 #define MAX_LOADSTRING 100
 
@@ -141,6 +141,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
+
+   sun::LoadScenes();
 
    return TRUE;
 }
