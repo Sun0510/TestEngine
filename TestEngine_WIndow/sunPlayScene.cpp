@@ -18,11 +18,12 @@ namespace sun
 		Player* p1 = new Player();
 
 		Transform* tr = p1->AddComponent<Transform>();
-		tr->SetPos(100, 470);
+		tr->SetPos(Vector2(0, 0));
 		tr->SetName(L"TR");
 
 		SpriteRenderer* sr = p1->AddComponent<SpriteRenderer>();
 		sr->SetName(L"SR");
+		sr->ImageLoad(L"..\\Resources\\CloudOcean.png");
 
 		AddGameObject(p1);
 	}

@@ -5,6 +5,9 @@
 namespace sun
 {
 	SpriteRenderer::SpriteRenderer()
+		: mImage(nullptr)
+		, mWidth(0)
+		, mHeight(0)
 	{
 	}
 
@@ -26,12 +29,18 @@ namespace sun
 
 	void SpriteRenderer::Render(HDC hdc)
 	{
-		HBRUSH brush = CreateSolidBrush(RGB(0, 0, 255));
-		SelectObject(hdc, brush);
-
 		Transform* tr = GetOwner()->GetComponent<Transform>();
-		Rectangle(hdc, tr->GetX(), tr->GetY(), 100 + tr->GetX(), 100 + tr->GetY());
-		DeleteObject(brush);
+		Vector2 pos = tr->GetPosition();
+
+		Gdiplus::Graphics graphics(hdc);
+		graphics.DrawImage(mImage, Gdiplus::Rect(pos.x, pos.y, mWidth, mHeight)); //사각형 모양으로 이미지 그리기
+	}
+
+	void SpriteRenderer::ImageLoad(const std::wstring& path)
+	{
+		mImage = Gdiplus::Image::FromFile(path.c_str()); //해당 경로로부터 이미지를 불러와 mImage에 저장
+		mWidth = mImage->GetWidth();
+		mHeight = mImage->GetHeight();
 	}
 }
 

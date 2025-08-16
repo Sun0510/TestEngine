@@ -17,9 +17,6 @@ namespace sun
 		const float speed = 100.0f;
 		float x, y;
 
-		Transform* tr = this->GetComponent<Transform>();
-		x = tr->GetX();
-		y = tr->GetY();
 		/*
 		//Player1
 		if (Input::GetKey(eKeyCode::Left))

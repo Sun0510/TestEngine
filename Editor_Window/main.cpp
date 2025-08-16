@@ -8,8 +8,10 @@
 
 #define MAX_LOADSTRING 100
 
-
 sun::Application application;
+
+ULONG_PTR gpToken;
+Gdiplus::GdiplusStartupInput gpsi;
 
 // 전역 변수:
 HINSTANCE hInst;                                // 현재 인스턴스입니다.
@@ -81,6 +83,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         }
     }*/
 
+    Gdiplus::GdiplusShutdown(gpToken);
+
     return (int) msg.wParam;
 }
 
@@ -141,6 +145,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
+
+   Gdiplus::GdiplusStartup(&gpToken, &gpsi, NULL);
 
    sun::LoadScenes();
 
