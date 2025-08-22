@@ -3,7 +3,9 @@
 #include <Windows.h>
 #include <vector>
 #include <map>
+#include <algorithm>
 
+#include "sunEnums.h"
 #include "sunMath.h"
 
 #include <mmsystem.h>

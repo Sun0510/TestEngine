@@ -30,7 +30,7 @@ namespace sun
 		{
 			Key key = {};
 			key.bPressed = true;
-			key.state = eKeyState::Down;
+			key.state = eKeyState::None;
 			key.keyCode = (eKeyCode)i;
 
 			Keys.push_back(key);
@@ -77,11 +77,11 @@ namespace sun
 	void Input::UpdateKeyUp(Key& key)
 	{
 		if (key.bPressed == true) // 이전에는 키가 눌려져있었음
-			key.state = eKeyState::Down;
+			key.state = eKeyState::Up;
 		else // 이전에도 키가 안 눌려져있었음
-			key.state = eKeyState::Down;
+			key.state = eKeyState::None;
 
-		key.bPressed = true;
+		key.bPressed = false;
 	}
 	
 }

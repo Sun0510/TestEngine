@@ -17,9 +17,11 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)sunComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)sunEntity.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)sunEnums.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)sunInput.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)sunGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)sunApplication.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)sunLayer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)sunMath.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)sunResource.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)sunScene.h" />
@@ -34,6 +36,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)sunInput.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)sunGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)sunApplication.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)sunLayer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)sunResource.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)sunScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)sunSceneManager.cpp" />

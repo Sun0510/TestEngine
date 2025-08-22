@@ -27,6 +27,9 @@ namespace sun
 		//씬 불러오기
 		static Scene* LoadScene(const std::wstring& name)
 		{
+			if (mActiveScene)
+				mActiveScene->OnExit();
+
 			//씬의 주소값을 가져옴
 			std::map<std::wstring, Scene*>::iterator iter = mScene.find(name);
 
@@ -38,6 +41,7 @@ namespace sun
 
 			//first는 키값, second는 데이터값
 			mActiveScene = iter->second;
+			mActiveScene->OnEnter();
 
 			return iter->second;
 		}

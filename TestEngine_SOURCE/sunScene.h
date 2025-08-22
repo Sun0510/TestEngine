@@ -1,5 +1,6 @@
 #pragma once
 #include "sunEntity.h"
+#include "sunLayer.h"
 #include "sunGameObject.h"
 
 namespace sun
@@ -7,7 +8,7 @@ namespace sun
 	class Scene : public Entity
 	{
 	private:
-		std::vector<GameObject*> mGameObjects;
+		std::vector<Layer*> mLayers;
 	public:
 		Scene();
 		~Scene();
@@ -16,9 +17,13 @@ namespace sun
 		virtual void Update();
 		virtual void LateUpdate();
 		virtual void Render(HDC hdc);
-		
-		//현재 Scene에 오브젝트 추가
-		void AddGameObject(GameObject* gameObject);
+
+		//Scene으로 진입할 때
+		virtual void OnEnter(); 
+		//Scene에서 나갈 때
+		virtual void OnExit();
+
+		void AddGameObject(GameObject* gameObj, eLayerType type);
 	
 	};
 }

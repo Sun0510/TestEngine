@@ -22,6 +22,9 @@
     <ClInclude Include="sunPlayer.h">
       <Filter>Components</Filter>
     </ClInclude>
+    <ClInclude Include="sunTitleScene.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sunPlayScene.cpp">
@@ -29,6 +32,9 @@
     </ClCompile>
     <ClCompile Include="sunPlayer.cpp">
       <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="sunTitleScene.cpp">
+      <Filter>Scenes</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

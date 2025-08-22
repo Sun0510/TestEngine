@@ -133,10 +133,12 @@
     <ClInclude Include="sunLoadScene.h" />
     <ClInclude Include="sunPlayer.h" />
     <ClInclude Include="sunPlayScene.h" />
+    <ClInclude Include="sunTitleScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sunPlayer.cpp" />
     <ClCompile Include="sunPlayScene.cpp" />
+    <ClCompile Include="sunTitleScene.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

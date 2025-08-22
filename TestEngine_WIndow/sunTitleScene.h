@@ -3,21 +3,19 @@
 
 namespace sun
 {
-	class PlayScene : public Scene
+	class TitleScene : public Scene
 	{
 	private:
-		class Player* bg;
+
 	public:
-		PlayScene();
-		~PlayScene();
+		TitleScene();
+		~TitleScene();
 
 		void Initialize() override;
 		void Update() override;
 		void LateUpdate() override;
 		void Render(HDC hdc) override;
-
-		void OnEnter() override;
-		void OnExit() override;
 	};
+
 }
 

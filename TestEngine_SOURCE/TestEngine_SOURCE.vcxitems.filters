@@ -2,7 +2,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)sunInput.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)sunGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)sunApplication.cpp">
       <Filter>Common</Filter>
     </ClCompile>
@@ -28,10 +27,15 @@
       <Filter>Common</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)sunResource.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)sunGameObject.cpp">
+      <Filter>GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)sunLayer.cpp">
+      <Filter>Layer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)sunInput.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)sunGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)sunApplication.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h">
       <Filter>Common</Filter>
@@ -61,6 +65,15 @@
       <Filter>Common</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)sunResource.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)sunGameObject.h">
+      <Filter>GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)sunLayer.h">
+      <Filter>Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)sunEnums.h">
+      <Filter>Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Common">
@@ -71,6 +84,12 @@
     </Filter>
     <Filter Include="Scene">
       <UniqueIdentifier>{dc3077f5-2e46-4514-952a-4866e1500c78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Layer">
+      <UniqueIdentifier>{ae514d7e-b2e8-41aa-8c1d-6509ca9ba640}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject">
+      <UniqueIdentifier>{3ee95cf1-915d-4817-98e5-d2f852aa0c13}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
