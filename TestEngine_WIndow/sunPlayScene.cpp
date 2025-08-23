@@ -4,10 +4,12 @@
 #include "sunPlayer.h"
 #include "sunInput.h"
 #include "sunTitleScene.h"
+#include "sunObject.h"
 
 namespace sun
 {
 	PlayScene::PlayScene()
+		: bg(nullptr)
 	{
 	}
 
@@ -17,17 +19,24 @@ namespace sun
 
 	void PlayScene::Initialize()
 	{
+		/*
 		bg = new Player();
 
 		Transform* tr = bg->AddComponent<Transform>();
-		tr->SetPos(Vector2(0, 0));
+		tr->SetPosition(Vector2(0, 0));
 		tr->SetName(L"TR");
 
 		SpriteRenderer* sr = bg->AddComponent<SpriteRenderer>();
 		sr->SetName(L"SR");
 		sr->ImageLoad(L"..\\Resources\\CloudOcean.png");
 
-		AddGameObject(bg, eLayerType::BackGround);
+		AddGameObject(bg, enums::eLayerType::BackGround);
+		*/
+		bg = object::Instantiate<Player>(enums::eLayerType::BackGround, Vector2(100.0f, 100.0f));
+
+		SpriteRenderer* sr = bg->AddComponent<SpriteRenderer>();
+		sr->SetName(L"SR");
+		sr->ImageLoad(L"..\\Resources\\CloudOcean.png");
 	}
 
 	void PlayScene::Update()
@@ -59,8 +68,8 @@ namespace sun
 	}
 	void PlayScene::OnExit()
 	{
-		Transform* tr = bg->GetComponent<Transform>();
-		tr->SetPos(Vector2(0, 0));
+		//Transform* tr = bg->GetComponent<Transform>();
+		//tr->SetPosition(Vector2(0, 0));
 	}
 }
 

@@ -1,17 +1,23 @@
 #include "sunGameObject.h"
 #include "sunInput.h"
 #include "sunTime.h"
+#include "sunTransform.h"
 
 namespace sun {
 	GameObject::GameObject()
 		: mX(0),
 		mY(0)
 	{
-
+		initializeAddTransform();
 	}
 
 	GameObject::~GameObject()
 	{
+	}
+
+	void GameObject::initializeAddTransform()
+	{
+		AddComponent<Transform>();
 	}
 
 	void GameObject::Initialize()

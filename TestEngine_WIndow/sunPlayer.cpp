@@ -21,22 +21,22 @@ namespace sun
 		//Player1
 		if (Input::GetKey(eKeyCode::Left))
 		{
-			tr->SetPos(x - speed * Time::DeltaTime(), y);
+			tr->SetPosition(x - speed * Time::DeltaTime(), y);
 		}
 
 		if (Input::GetKey(eKeyCode::Right))
 		{
-			tr->SetPos(x + speed * Time::DeltaTime(), y);
+			tr->SetPosition(x + speed * Time::DeltaTime(), y);
 		}
 
 		if (Input::GetKey(eKeyCode::Up))
 		{
-			tr->SetPos(x, y - speed * Time::DeltaTime()); // 윈도우 좌표계상 가장 왼쪽위가 (0,0)이기 때문에 마이너스
+			tr->SetPosition(x, y - speed * Time::DeltaTime()); // 윈도우 좌표계상 가장 왼쪽위가 (0,0)이기 때문에 마이너스
 		}
 
 		if (Input::GetKey(eKeyCode::Down))
 		{
-			tr->SetPos(x, y + speed * Time::DeltaTime());
+			tr->SetPosition(x, y + speed * Time::DeltaTime());
 		}
 		*/
 	}
@@ -50,7 +50,7 @@ namespace sun
 			Transform* tr = GetComponent<Transform>();
 			Vector2 pos = tr->GetPosition();
 			pos.x += 100.0f * Time::DeltaTime();
-			tr->SetPos(pos);
+			tr->SetPosition(pos);
 		}
 	}
 

@@ -9,6 +9,8 @@ namespace sun
 		std::vector<Component*> mComponents;
 		float mX;
 		float mY;
+	private:
+		void initializeAddTransform();
 	public:
 		GameObject();
 		~GameObject();

@@ -1,6 +1,6 @@
 #pragma once
 
-namespace sun
+namespace sun::enums
 {
 	enum class eLayerType
 	{

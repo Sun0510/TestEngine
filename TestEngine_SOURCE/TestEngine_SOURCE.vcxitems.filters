@@ -74,6 +74,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)sunEnums.h">
       <Filter>Common</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)sunObject.h">
+      <Filter>GameObject</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Common">

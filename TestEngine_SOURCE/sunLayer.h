@@ -8,7 +8,7 @@ namespace sun
 	class Layer : public Entity
 	{
 	private:
-		eLayerType mType;
+		enums::eLayerType mType;
 		std::vector<GameObject*> mGameObjects;
 	public:
 		Layer();

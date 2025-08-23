@@ -23,6 +23,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)sunApplication.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)sunLayer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)sunMath.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)sunObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)sunResource.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)sunScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)sunSceneManager.h" />
