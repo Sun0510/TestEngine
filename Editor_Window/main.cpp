@@ -5,6 +5,7 @@
 #include "Editor_Window.h"
 #include "..\\TestEngine_SOURCE\sunApplication.h"
 #include "..\\TestEngine_Window\sunLoadScene.h"
+#include "..\\TestEngine_Window\sunLoadResources.h"
 
 #define MAX_LOADSTRING 100
 
@@ -148,6 +149,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
    Gdiplus::GdiplusStartup(&gpToken, &gpsi, NULL);
 
+   sun::LoadResources();
    sun::LoadScenes();
 
    return TRUE;

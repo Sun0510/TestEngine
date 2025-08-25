@@ -130,6 +130,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="sunLoadResources.h" />
     <ClInclude Include="sunLoadScene.h" />
     <ClInclude Include="sunPlayer.h" />
     <ClInclude Include="sunPlayScene.h" />

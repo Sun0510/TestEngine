@@ -25,6 +25,9 @@
     <ClInclude Include="sunTitleScene.h">
       <Filter>Scenes</Filter>
     </ClInclude>
+    <ClInclude Include="sunLoadResources.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sunPlayScene.cpp">

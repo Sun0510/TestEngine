@@ -26,17 +26,27 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)sunTime.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)sunResource.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)sunGameObject.cpp">
       <Filter>GameObject</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)sunLayer.cpp">
       <Filter>Layer</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)sunResource.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)sunTexture.cpp">
+      <Filter>Resource\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)sunResources.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)sunMath.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)sunInput.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)sunApplication.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h">
       <Filter>Common</Filter>
     </ClInclude>
@@ -64,7 +74,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)sunTime.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)sunResource.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)sunGameObject.h">
       <Filter>GameObject</Filter>
     </ClInclude>
@@ -76,6 +85,18 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)sunObject.h">
       <Filter>GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)sunResource.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)sunTexture.h">
+      <Filter>Resource\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)sunApplication.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)sunResources.h">
+      <Filter>Resource</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -93,6 +114,12 @@
     </Filter>
     <Filter Include="GameObject">
       <UniqueIdentifier>{3ee95cf1-915d-4817-98e5-d2f852aa0c13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{9d56ab2b-86a3-478d-85c8-b90fdbdae485}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Texture">
+      <UniqueIdentifier>{673e3dcc-0789-4367-b49a-d11551a92d0f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

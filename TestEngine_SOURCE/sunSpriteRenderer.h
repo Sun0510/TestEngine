@@ -1,5 +1,6 @@
 #pragma once
 #include "sunComponent.h"
+#include "sunTexture.h"
 
 namespace sun
 {
@@ -8,9 +9,8 @@ namespace sun
 	class SpriteRenderer : public Component
 	{
 	private:
-		Gdiplus::Image* mImage;
-		UINT mWidth;
-		UINT mHeight;
+		graphics::Texture* mTexture;
+		Vector2 mSize;
 	public:
 		SpriteRenderer();
 		~SpriteRenderer();
@@ -20,7 +20,8 @@ namespace sun
 		void LateUpdate() override;
 		void Render(HDC hdc) override;
 
-		void ImageLoad(const std::wstring& path); //이미지 불러오기
+		void SetTexture(graphics::Texture* texture) { mTexture = texture; }
+		void SetSize(Vector2 size) { mSize = size; }
 	};
 }
 

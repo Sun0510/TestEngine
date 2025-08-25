@@ -5,6 +5,8 @@
 #include "sunInput.h"
 #include "sunTitleScene.h"
 #include "sunObject.h"
+#include "sunTexture.h"
+#include "sunResources.h"
 
 namespace sun
 {
@@ -19,6 +21,8 @@ namespace sun
 
 	void PlayScene::Initialize()
 	{
+		//게임 오브젝트 만들기 전에 리소스 전부 Load 하면 좋음
+
 		/*
 		bg = new Player();
 
@@ -31,12 +35,19 @@ namespace sun
 		sr->ImageLoad(L"..\\Resources\\CloudOcean.png");
 
 		AddGameObject(bg, enums::eLayerType::BackGround);
-		*/
-		bg = object::Instantiate<Player>(enums::eLayerType::BackGround, Vector2(100.0f, 100.0f));
 
 		SpriteRenderer* sr = bg->AddComponent<SpriteRenderer>();
 		sr->SetName(L"SR");
 		sr->ImageLoad(L"..\\Resources\\CloudOcean.png");
+		*/
+		bg = object::Instantiate<Player>(enums::eLayerType::BackGround, Vector2(100.0f, 100.0f));
+
+		graphics::Texture* tex = new graphics::Texture();
+		tex->Load(L"..\\Resources\\CloudOcean.png");
+
+		SpriteRenderer* sr = bg->AddComponent<SpriteRenderer>();
+		sr->SetTexture(Resources::Find<graphics::Texture>(L"BG"));
+		
 	}
 
 	void PlayScene::Update()

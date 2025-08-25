@@ -1,9 +1,10 @@
 #pragma once
-#include <string>
 #include <Windows.h>
+#include <string>
 #include <vector>
 #include <map>
 #include <algorithm>
+#include <assert.h>
 
 #include "sunEnums.h"
 #include "sunMath.h"

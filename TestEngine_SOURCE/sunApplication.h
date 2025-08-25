@@ -33,6 +33,8 @@ namespace sun {
 		void LateUpdate();
 		void Render();
 
+		HDC GetHdc() { return mHdc; }
+
 	};
 }
 
